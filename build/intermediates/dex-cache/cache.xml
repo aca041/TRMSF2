@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\u0105344\AndroidStudioProjects\TRShuttleFinder\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0 rc3"
+        sha1="1821601ddbec5ff125653097812823388700af74">
+        <dex dex="C:\Users\u0105344\AndroidStudioProjects\TRShuttleFinder\app\build\intermediates\pre-dexed\debug\classes-7b0cc4cef592114b2f4ddfd5ab6b80d2bbde2850.jar" />
+    </item>
+
+</items>
