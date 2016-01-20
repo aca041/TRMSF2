@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.test.trshuttlefinder.ActivityTwo"
-    android:background="@android:color/holo_green_light">
+    android:background="@color/bold_gray">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
