@@ -1,13 +1,14 @@
 <resources>
-    <string name="app_name">TR Shuttle Finder</string>
+    <string name="app_name">TR Manila Shuttle Schedule Finder</string>
     <string name="action_settings">Settings</string>
     <string name="Time">ETD</string>
     <string name="To">TO</string>
     <string name="FromText">FROM</string>
     <string name="Search">Search</string>
-    <string name="ShuttleFinder">Shuttle Finder</string>
-    <string name="title">TR Manila Shuttle Finder</string>
-    <string name="shuttlefinder">TR Manila Shuttle Finder</string>
+    <string name="ShuttleFinder">Shuttle Schedule Finder</string>
+    <string name="title">TR Manila Shuttle Schedule Finder (July 1 2015)</string>
+    <string name="shuttlefinder">TR Manila Shuttle Schedule Finder</string>
+    <string name="EffectiveDate">Effective July 1 2015</string>
     <string-array name="From">
         <item> </item>
         <item>G4</item>
