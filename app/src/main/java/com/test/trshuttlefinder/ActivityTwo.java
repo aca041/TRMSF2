@@ -94,7 +94,7 @@ public class ActivityTwo extends AppCompatActivity {
 
         TextView tResult1 = (TextView) findViewById(R.id.VAN_No);
         tResult1.setTypeface(KnowledgeFont);
-        
+
     }
 
 
