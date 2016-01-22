@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <color name="orange">#ff9000</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#A4A4A4</color>
+    <color name="lightgrey">#e8e7e7</color>
+    <color name="button_grey">#a4a4a4</color>
+    <color name="light_cool_gray">#E9E9E9</color>
+    <color name="bold_gray">#444444</color>
+    <color name="muted_gray">#666666</color>
+    <color name="snow">#F7F7F7</color>
+
+    <color name="apptheme_color">#33b5e5</color>
+</resources>
