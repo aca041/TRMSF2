@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -15,6 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -99,8 +101,18 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         TRKownledgeFont(textView, KnowledgeFont);
         textView = (TextView) findViewById(R.id.lbl_Time);
         TRKownledgeFont(textView, KnowledgeFont);
-        textView = (TextView) findViewById(R.id.textEffective);
-        TRKownledgeFont(textView, KnowledgeFont);
+
+
+        ImageView img = (ImageView)findViewById(R.id.imageView);
+        img.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://thehub.thomsonreuters.com/groups/manila-automation-group"));
+                startActivity(intent);
+            }
+        });
 
 
     }

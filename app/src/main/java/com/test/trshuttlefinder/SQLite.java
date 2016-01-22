@@ -100,7 +100,10 @@ public class SQLite extends SQLiteOpenHelper  {
 
         String query1=null;
         String select = null;
-        select="SELECT  'Van' || ' ' || van ||  start ||' - \t' || destination  || '\t\t(' || etd || bldg || ')'  AS one FROM ";
+        //select="SELECT  'Van' || ' ' || van ||  start ||' - \t' || destination  || '\t\t(' || etd || bldg || ')'  AS one FROM ";
+        select="SELECT  'Van' || ',' || van || ',' || start " +
+                "||',' || destination  || ',' || etd ||  ',' || bldg " +
+                "  AS one FROM ";
 
             if (ActivityTwo._From.length() >= 2 && ActivityTwo._To.length() >= 2 && ActivityTwo._Time.length() >= 2){
                     query1 = select + TABLE_ROUTE + " " + "WHERE " + COLUMN_ETD + " like \"" + ActivityTwo._Time.substring(0,2) + "%\" AND "+ COLUMN_FROM + " like \"%"+ ActivityTwo._From +"%\" AND " +COLUMN_TO + " like \"%" + ActivityTwo._To + "%\";" ;
@@ -131,12 +134,13 @@ public class SQLite extends SQLiteOpenHelper  {
 
             Cursor c  = db.rawQuery(query1, null);
             Log.d("dbStringchecka",dbString);
-            dbString = dbString + "\n" + "Available Shuttles: ";
+            dbString = dbString + System.getProperty("line.separator") + "Available Shuttles: ";
             Log.d("dbStringcheckb",dbString);
             if (c.moveToFirst()) {
                     do {
                             for (int i=0; i<c.getColumnCount(); i++) {
-                                   dbString += System.getProperty("line.separator") + c.getString(i).replace("|", "\t");
+                                    //dbString += System.getProperty("line.separator") + c.getString(i).replace("|", "\t");
+                                    dbString += System.getProperty("line.separator")  + c.getString(i);
                             }
 
 
@@ -146,7 +150,7 @@ public class SQLite extends SQLiteOpenHelper  {
             }
             db.close();
 
-
+            Log.d("dbstringF", dbString);
             return dbString;
     }
 
@@ -218,21 +222,25 @@ public class SQLite extends SQLiteOpenHelper  {
                     stringTemp=arrLine[0];
                     strLength=stringTemp.length();
                     if (strLength == 1) {
-                        line1 = "'" + stringTemp + "|||'";
+                        //line1 = "'" + stringTemp + "|||'";
+                        line1 = "'" + stringTemp + "'";
                     } else {
-                        line1 = "'" + stringTemp + "|'";
+                        //line1 = "'" + stringTemp + "|'";
+                        line1 = "'" + stringTemp + "'";
                     }
                     //Log.d  ("brey line arr 0" ,stringTemp);
 
 
                     stringTemp=arrLine[1];
                     //strLength=stringTemp.length();
-                    line1 += ",'" + stringTemp + "|'";
+                    //line1 += ",'" + stringTemp + "|'";
+                    line1 += ",'" + stringTemp + "'";
                     //Log.d  ("brey line arr 1" ,stringTemp);
 
 
                     stringTemp=arrLine[2];
-                    line1 += ",'-" + repeat('|', 1)+ stringTemp + "'";
+                    //line1 += ",'-" + repeat('|', 1)+ stringTemp + "'";
+                    line1 += ",'" + stringTemp + "'";
                     Log.d("breylinearr 2", stringTemp);
 
 
@@ -241,14 +249,16 @@ public class SQLite extends SQLiteOpenHelper  {
                     if (strLength == 5) {
                         line1 += ",'" + stringTemp + "'";
                     } else {
-                        line1 += ",'" + stringTemp + repeat('|', 5) + "'";
+                        //line1 += ",'" + stringTemp + repeat('|', 5) + "'";
+                        line1 += ",'" + stringTemp  + "'";
                     }
                     //Log.d  ("brey line arr 3" ,stringTemp);
 
 
                     stringTemp=arrLine[4];
                     //strLength=stringTemp.length();
-                    line1 += ",'" + stringTemp + "|'";
+                    //line1 += ",'" + stringTemp + "|'";
+                    line1 += ",'" + stringTemp + "'";
                     //Log.d  ("brey line arr 4" ,stringTemp);
 
 
@@ -265,10 +275,12 @@ public class SQLite extends SQLiteOpenHelper  {
                         //Log.d ("lumabasMMa",stringTemp);
                         if (tf){
 
-                            line1 += ",'" + stringTemp + repeat('|', 4) + "'";
+                            //line1 += ",'" + stringTemp + repeat('|', 4) + "'";
+                            line1 += ",'" + stringTemp + "'";
                         }
                         else {
-                            line1 += ",'" + stringTemp + repeat('|', 5) + "'";
+                            //line1 += ",'" + stringTemp + repeat('|', 5) + "'";
+                            line1 += ",'" + stringTemp + "'";
                         }
                     }
                     //Log.d ("lumabasMMb",line1);
