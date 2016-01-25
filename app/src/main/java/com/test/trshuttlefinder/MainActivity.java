@@ -36,6 +36,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
+
         KnowledgeFont = Typeface.createFromAsset(getAssets(),"fonts/Knowledge-Medium.ttf");
 
         super.onCreate(savedInstanceState);

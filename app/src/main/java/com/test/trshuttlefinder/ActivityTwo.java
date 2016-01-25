@@ -1,6 +1,7 @@
 package com.test.trshuttlefinder;
 
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -8,11 +9,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import android.util.Log;
-import android.view.ContextThemeWrapper;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-//import android.widget.TextView;
+
 
 
 import java.util.ArrayList;
@@ -50,7 +54,7 @@ public class ActivityTwo extends AppCompatActivity {
 
 
         for (int i=0; i < dbRowValues.length; i++){
-        //for (int i=0; i < 50; i++){
+            //for (int i=0; i < 50; i++){
             map = new HashMap<String, String>();
             if ( i==0 ){
                 TextView tResult = (TextView) findViewById(R.id.data0);
@@ -87,14 +91,55 @@ public class ActivityTwo extends AppCompatActivity {
         }
 
 
-        SimpleAdapter mSchedule = new SimpleAdapter(this, mylist, R.layout.raw,
+        MySimpleAdapter mSchedule = new MySimpleAdapter(this, mylist, R.layout.raw,
                 new String[] {"van", "from", "to","etd","bldg"}, new int[] {R.id.VAN_No, R.id.FROM_CELL, R.id.TO_CELL, R.id.ETD, R.id.BLDG});
         list.setAdapter(mSchedule);
+
         Log.d("breyerror_1", "list.setAdapter(mSchedule);");
 
-        TextView tResult1 = (TextView) findViewById(R.id.VAN_No);
-        tResult1.setTypeface(KnowledgeFont);
+        //TextView tResult1 = (TextView) findViewById(R.id.VAN_No);
+        //tResult1.setTypeface(KnowledgeFont);
 
+    }
+    public class MySimpleAdapter extends SimpleAdapter {
+
+        private ArrayList<HashMap<String, String>> results;
+
+        public MySimpleAdapter(Context context, ArrayList<HashMap<String, String>> data, int resource, String[] from, int[] to) {
+            super(context, data, resource, from, to);
+            this.results = data;
+        }
+
+        public View getView(int position, View view, ViewGroup parent){
+
+            Typeface localTypeface1 = Typeface.createFromAsset(getAssets(), "fonts/Knowledge-Medium.ttf");
+            View v = view;
+            if (v == null) {
+                LayoutInflater vi = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                v = vi.inflate(R.layout.raw, null);
+            }
+            TextView vanText = (TextView) v.findViewById(R.id.VAN_No);
+            vanText.setText(results.get(position).get("van"));
+            vanText.setTypeface(localTypeface1);
+
+            TextView fromText = (TextView) v.findViewById(R.id.FROM_CELL);
+            fromText.setText(results.get(position).get("from"));
+            fromText.setTypeface(localTypeface1);
+
+            TextView toText = (TextView) v.findViewById(R.id.TO_CELL);
+            toText.setText(results.get(position).get("to"));
+            toText.setTypeface(localTypeface1);
+
+            TextView etdText = (TextView) v.findViewById(R.id.ETD);
+            etdText.setText(results.get(position).get("etd"));
+            etdText.setTypeface(localTypeface1);
+
+            TextView bldgText = (TextView) v.findViewById(R.id.BLDG);
+            bldgText.setText(results.get(position).get("bldg"));
+            bldgText.setTypeface(localTypeface1);
+
+            return v;
+        }
     }
 
 
