@@ -74,12 +74,7 @@ public class ActivityTwo extends AppCompatActivity {
             else {
                 tmpString=dbRowValues[i].split(",");
 
-                /*Log.d("brey_rec0", tmpString[0]);
-                Log.d("brey_rec1", tmpString[1]);
-                Log.d("brey_rec2", tmpString[2]);
-                Log.d("brey_rec3", tmpString[3]);
-                Log.d("brey_rec4", tmpString[4]);
-                Log.d("brey_rec5", tmpString[5]);*/
+
                 map.put("van", tmpString[0] + "  " + tmpString[1]);
                 map.put("from", tmpString[2]);
                 map.put("to", tmpString[3]);
@@ -95,7 +90,7 @@ public class ActivityTwo extends AppCompatActivity {
                 new String[] {"van", "from", "to","etd","bldg"}, new int[] {R.id.VAN_No, R.id.FROM_CELL, R.id.TO_CELL, R.id.ETD, R.id.BLDG});
         list.setAdapter(mSchedule);
 
-        Log.d("breyerror_1", "list.setAdapter(mSchedule);");
+        //Log.d("breyerror_1", "list.setAdapter(mSchedule);");
 
         //TextView tResult1 = (TextView) findViewById(R.id.VAN_No);
         //tResult1.setTypeface(KnowledgeFont);
