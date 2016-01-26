@@ -119,12 +119,10 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     }
 
     public static class MySpinnerAdapter extends ArrayAdapter<String> {
-        // Initialise custom font, for example:
+
         Typeface font = Typeface.createFromAsset(getContext().getAssets(),
                 "fonts/Knowledge-Medium.ttf");
 
-        // (In reality I used a manager which caches the Typeface objects)
-        // Typeface font = FontManager.getInstance().getFont(getContext(), Knowledge-Medium.);
 
         private MySpinnerAdapter(Context context, int resource, List<String> items) {
             super(context, resource, items);
@@ -143,6 +141,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         public View getDropDownView(int position, View convertView, ViewGroup parent) {
             TextView view = (TextView) super.getDropDownView(position, convertView, parent);
             view.setTypeface(font);
+
             return view;
         }
     }
@@ -171,6 +170,14 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         _To = spinner2.getSelectedItem().toString();
         _Time = spinner3.getSelectedItem().toString();
 
+
+        if (spinner.getSelectedItemPosition()!=0 && spinner.getSelectedItemPosition()!=2 ){
+            spinner2.setSelection(2);
+        }
+
+        else if (spinner2.getSelectedItemPosition()!=0 && spinner.getSelectedItemPosition()!=2 ){
+            spinner.setSelection(2);
+        }
     }
 
     @Override
