@@ -21,13 +21,15 @@
         android:text="@string/Search"
         android:textColor="@color/white"
         android:id="@+id/button_Search"
-        android:background="@drawable/button_bg"
         android:layout_above="@+id/imageView3"
         android:layout_toRightOf="@+id/frameLayout"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_bg"
+
+        />
 
     <TableRow
         android:layout_width="match_parent"
@@ -53,7 +55,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="90dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="TR Manila Shuttle Schedule Finder"
             android:id="@+id/textView"
