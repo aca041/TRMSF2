@@ -1,11 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:layout_height="match_parent" android:paddingLeft="2dp"
+    tools:context=".MainActivity"
     android:background="@color/bold_gray"
-    android:focusableInTouchMode="false">
+    android:focusableInTouchMode="false"
+    android:paddingRight="2dp">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,18 +12,22 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/imageView3" />
+        android:id="@+id/imageView3"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp" />
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:text="@string/Search"
         android:textColor="@color/white"
         android:id="@+id/button_Search"
-        android:background="@color/orange"
-        android:layout_below="@+id/frameLayout"
-        android:layout_alignRight="@+id/tableRow"
-        android:layout_alignEnd="@+id/tableRow"
-         />
+        android:background="@drawable/button_bg"
+        android:layout_above="@+id/imageView3"
+        android:layout_toRightOf="@+id/frameLayout"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
 
     <TableRow
         android:layout_width="match_parent"
@@ -58,7 +61,7 @@
             android:textAlignment="center"
             android:textStyle="bold"
             android:singleLine="false"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:layout_alignBottom="@+id/imageView"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -71,12 +74,13 @@
         android:layout_width="270dp"
         android:layout_height="270dp"
         android:layout_below="@+id/tableRow"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentLeft="false"
         android:layout_alignParentStart="false"
-        android:layout_centerHorizontal="true"
         android:id="@+id/frameLayout"
         android:paddingTop="1dp"
-        android:background="#ffffff">
+        android:background="#ffffff"
+        android:layout_alignParentRight="false"
+        android:layout_centerHorizontal="true">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -102,18 +106,19 @@
                     android:textColor="@color/white" />
 
                 <Spinner
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:id="@+id/input_From"
-                    android:spinnerMode="dialog"
-                    android:dropDownWidth="fill_parent"
+                    android:spinnerMode="dropdown"
+                    android:dropDownWidth="wrap_content"
                     android:textAlignment="textStart"
                     android:layout_gravity="center"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:paddingTop="10dp"
                     android:nestedScrollingEnabled="false"
-                    android:clickable="true" />
+                    android:clickable="true"
+                    android:layout_marginLeft="30dp" />
 
             </TableRow>
 
@@ -134,17 +139,18 @@
                     android:textColor="@color/white" />
 
                 <Spinner
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:id="@+id/input_To"
-                    android:spinnerMode="dialog"
+                    android:spinnerMode="dropdown"
                     android:textAlignment="textStart"
                     android:dropDownWidth="wrap_content"
                     android:layout_gravity="center"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:paddingTop="5dp"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="30dp" />
             </TableRow>
 
             <TableRow
@@ -164,10 +170,10 @@
                     android:textColor="@color/white" />
 
                 <Spinner
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:id="@+id/input_Time"
-                    android:spinnerMode="dialog"
+                    android:spinnerMode="dropdown"
                     android:dropDownWidth="wrap_content"
                     android:nestedScrollingEnabled="false"
                     android:touchscreenBlocksFocus="false"
@@ -180,7 +186,8 @@
                     android:paddingRight="20dp"
                     android:paddingTop="5dp"
                     android:paddingBottom="10dp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="30dp" />
             </TableRow>
 
         </TableLayout>

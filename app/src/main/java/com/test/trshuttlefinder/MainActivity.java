@@ -165,9 +165,12 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
 
     public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
-       _From = spinner.getSelectedItem().toString();
-       _To = spinner2.getSelectedItem().toString();
-       _Time = spinner3.getSelectedItem().toString();
+
+
+        _From = spinner.getSelectedItem().toString();
+        _To = spinner2.getSelectedItem().toString();
+        _Time = spinner3.getSelectedItem().toString();
+
     }
 
     @Override
