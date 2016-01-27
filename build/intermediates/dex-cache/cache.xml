@@ -2,53 +2,53 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\pre-dexed\debug\classes-8d8b283970bbc64edaa158576cb005dd2f997eab.jar" />
-    </item>
-    <item
-        jar="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-93653bb659109a24fc562bcdca8fafffa87f4414.jar" />
-    </item>
-    <item
-        jar="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.3.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="0c3e81d3eb86b86d194b5cdb6a4de78203f6f7fd">
-        <dex dex="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\pre-dexed\debug\classes-3ffcd4e63c31635569604db7be3afb66aa541aa2.jar" />
-    </item>
-    <item
-        jar="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.3.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="345a1b5cf5b144ce18ba6962bc66a7e2f26c1c1b">
-        <dex dex="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\pre-dexed\debug\classes-39dfa1369624dc8971a3ea551c9154aaa316cbef.jar" />
-    </item>
-    <item
-        jar="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\pre-dexed\debug\classes-32282733c886358c29f74a7cb571a74825dd5c54.jar" />
-    </item>
-    <item
-        jar="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1821601ddbec5ff125653097812823388700af74">
-        <dex dex="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\pre-dexed\debug\classes-822b991e27573b6137184a72f0c221f21deb10a9.jar" />
-    </item>
-    <item
-        jar="C:\Users\u0045759\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jar="C:\Users\u0105344\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="C:\Users\u0045759\AndroidStudioProjects\TRMSF2\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-54a8daff3eb9ab7151eb96591714ee133c4c2be3.jar" />
+        <dex dex="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-2fa3c23f91fcc5e43a756a2f9be7897016179c98.jar" />
+    </item>
+    <item
+        jar="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="0c3e81d3eb86b86d194b5cdb6a4de78203f6f7fd">
+        <dex dex="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\pre-dexed\debug\classes-33ddfa9f4e1f0b04e348067f376f0a19e10e7760.jar" />
+    </item>
+    <item
+        jar="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="345a1b5cf5b144ce18ba6962bc66a7e2f26c1c1b">
+        <dex dex="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\pre-dexed\debug\classes-65a9a22294de123ecca2ad3e7c7b5c588c9bcfe9.jar" />
+    </item>
+    <item
+        jar="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-ec7c4729753e2cba4d7cf6b56be3eb86ed45229c.jar" />
+    </item>
+    <item
+        jar="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\pre-dexed\debug\classes-f200ad6ee8600be6d1b3875bc7a37d60052437f9.jar" />
+    </item>
+    <item
+        jar="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1821601ddbec5ff125653097812823388700af74">
+        <dex dex="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\pre-dexed\debug\classes-0cbe5f10bfff6160f109aab27ece24c4e158a388.jar" />
+    </item>
+    <item
+        jar="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\u0105344\AndroidStudioProjects\TRMSF\app\build\intermediates\pre-dexed\debug\classes-3ba79b0b60f640fd5a593ccb3005a7270d14f3a1.jar" />
     </item>
 
 </items>

@@ -21,9 +21,11 @@
         <item> </item>
         <item>G4</item>
         <item>MH</item>
+        <item>MM</item>
         <item>PRO-P</item>
         <item>Shell</item>
         <item>SL1</item>
+        <item>SM</item>
     </string-array>
     <string-array name="Bldg">
         <item> </item>
