@@ -1,21 +1,22 @@
 package com.test.trshuttlefinder;
 
+
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
-//import android.util.Log;
-
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class SQLite extends SQLiteOpenHelper  {
@@ -61,8 +62,9 @@ public class SQLite extends SQLiteOpenHelper  {
             db.execSQL(query);
 
 
-        String path1 = Environment.getExternalStorageDirectory().getAbsolutePath() + "/download";
-        File file = new File (path1 + "/shuttle.csv");
+        String path1 = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Download";
+        File file = new File (path1 + "/shuttle.CSV");
+
         String [] loadText = Load(file);
 
         String finalString = "";
@@ -85,12 +87,6 @@ public class SQLite extends SQLiteOpenHelper  {
             }
 
         }
-
-
-
-        //Log.d  ("breylog stringTemp [0]",finalString);
-
-
         String dataValues = finalString;
 
         String sql = "INSERT INTO " + TABLE_ROUTE + " ("+COLUMN_VAN+","+COLUMN_ETD+","+COLUMN_BLDG+","+COLUMN_FROM+","+COLUMN_VIA+","+COLUMN_TO+") VALUES "
@@ -133,9 +129,9 @@ public class SQLite extends SQLiteOpenHelper  {
 
 
             Cursor c  = db.rawQuery(query1, null);
-            Log.d("dbStringchecka",dbString);
+
             dbString = dbString + System.getProperty("line.separator") + "Available Shuttles: ";
-            Log.d("dbStringcheckb",dbString);
+
             if (c.moveToFirst()) {
                     do {
                             for (int i=0; i<c.getColumnCount(); i++) {
@@ -150,9 +146,10 @@ public class SQLite extends SQLiteOpenHelper  {
             }
             db.close();
 
-            Log.d("dbstringF", dbString);
+
             return dbString;
     }
+
 
 
     public static String repeat(char c,int i)
@@ -165,6 +162,37 @@ public class SQLite extends SQLiteOpenHelper  {
         return tst;
     }
 
+    public class CSVFile {
+        InputStream inputStream;
+
+        public CSVFile(InputStream inputStream){
+            this.inputStream = inputStream;
+        }
+
+        public List read(){
+            List resultList = new ArrayList();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            try {
+                String csvLine;
+                while ((csvLine = reader.readLine()) != null) {
+                    String[] row = csvLine.split(",");
+                    resultList.add(row);
+                }
+            }
+            catch (IOException ex) {
+                throw new RuntimeException("Error in reading CSV file: "+ex);
+            }
+            finally {
+                try {
+                    inputStream.close();
+                }
+                catch (IOException e) {
+                    throw new RuntimeException("Error while closing input stream: "+e);
+                }
+            }
+            return resultList;
+        }
+    }
 
     public static String[] Load(File file)
     {
@@ -204,95 +232,39 @@ public class SQLite extends SQLiteOpenHelper  {
 
         String stringTemp = "VAN,ROUTE,ETD,BLDG,FROM,VIA,TO";
         String[] arrLine;
-        Integer strLength = 0;
-
-        Boolean tf = false;
 
         try
         {
             while((line=br.readLine())!=null)
             {
                 arrLine = line.split(",");
+
                 if (i == 0) {
                     array[i] = arrLine[0];
                 }
                 else{
 
-
                     stringTemp=arrLine[0];
-                    strLength=stringTemp.length();
-                    if (strLength == 1) {
-                        //line1 = "'" + stringTemp + "|||'";
-                        line1 = "'" + stringTemp + "'";
-                    } else {
-                        //line1 = "'" + stringTemp + "|'";
-                        line1 = "'" + stringTemp + "'";
-                    }
-                    //Log.d  ("brey line arr 0" ,stringTemp);
-
+                    line1 = "'" + stringTemp + "'";
 
                     stringTemp=arrLine[1];
-                    //strLength=stringTemp.length();
-                    //line1 += ",'" + stringTemp + "|'";
                     line1 += ",'" + stringTemp + "'";
-                    //Log.d  ("brey line arr 1" ,stringTemp);
-
 
                     stringTemp=arrLine[2];
-                    //line1 += ",'-" + repeat('|', 1)+ stringTemp + "'";
                     line1 += ",'" + stringTemp + "'";
-                    Log.d("breylinearr 2", stringTemp);
-
 
                     stringTemp=arrLine[3];
-                    strLength=stringTemp.length();
-                    if (strLength == 5) {
-                        line1 += ",'" + stringTemp + "'";
-                    } else {
-                        //line1 += ",'" + stringTemp + repeat('|', 5) + "'";
-                        line1 += ",'" + stringTemp  + "'";
-                    }
-                    //Log.d  ("brey line arr 3" ,stringTemp);
-
+                    line1 += ",'" + stringTemp + "'";
 
                     stringTemp=arrLine[4];
-                    //strLength=stringTemp.length();
-                    //line1 += ",'" + stringTemp + "|'";
                     line1 += ",'" + stringTemp + "'";
-                    //Log.d  ("brey line arr 4" ,stringTemp);
-
 
                     stringTemp=arrLine[5];
-                    //Log.d ("lumabasMM",stringTemp);
-                    //strLength=stringTemp.length();
-                    strLength=stringTemp.length();
-                    //Log.d ("lumabasMM","'" + strLength + "'");
-                    tf = Objects.equals(stringTemp, new String("MM"));
-                    //Log.d ("lumabasMMTF","'" + tf);
-                    if (strLength == 5) {
-                        line1 += ",'" + stringTemp + "'";
-                    } else {
-                        //Log.d ("lumabasMMa",stringTemp);
-                        if (tf){
+                    line1 += ",'" + stringTemp + "'";
 
-                            //line1 += ",'" + stringTemp + repeat('|', 4) + "'";
-                            line1 += ",'" + stringTemp + "'";
-                        }
-                        else {
-                            //line1 += ",'" + stringTemp + repeat('|', 5) + "'";
-                            line1 += ",'" + stringTemp + "'";
-                        }
-                    }
-                    //Log.d ("lumabasMMb",line1);
-                    //Log.d  ("brey line arr 5" ,line1);
-
-
-                    //Log.d  ("brey line 1",line1);
                     array[i] = line1;
 
                 }
-
-
                 i++;
             }
         }
